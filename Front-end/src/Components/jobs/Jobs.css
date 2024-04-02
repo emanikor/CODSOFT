@@ -1,0 +1,103 @@
+.jobs {
+    margin-top: 20px;
+    gap: 70px;
+  }
+  .jobs h1{
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif,'oxygen';
+        max-width: 500px;
+   
+  }
+  .jobs p{
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif,'oxygen';
+        max-width: 500px;
+   
+  }
+  .Jobs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  
+    max-width:1200px ;
+    padding: 20px;
+  }
+  
+  .JobLink{
+    text-decoration: none;
+    list-style: none;
+    text-decoration-line: none;
+
+  }
+  .cards {
+    height: 300px;
+    border-radius: 5px;
+    padding: 20px;
+    gap: 1rem;
+    box-shadow: 2px 23px 54px -8px rgba(0,0,0,0.16);
+    -webkit-box-shadow: 2px 23px 54px -8px rgba(0,0,0,0.16);
+    -moz-box-shadow: 2px 23px 54px -8px rgba(0,0,0,0.16);
+    
+    
+  }
+  .location{
+    color: #000000;
+    position: relative;
+    
+  }
+  
+  .date {
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  
+  .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  
+  .description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+    text-decoration: none;
+    text-decoration: none;
+    /* padding: 0 0 80px 0; */
+  
+  }
+  .Apply-btn{
+    margin: 15px 0 8px 0 ;
+    padding: 10px 20px;
+    color: aliceblue;
+    font-size: 1rem;
+    background-color:  #20C6B1;
+    border: none;
+  }
+  @media(min-width:850px){
+    .Jobs-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        max-width:1200px ;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .jobs p{
+        text-align: center;
+        font-size: 16px;
+        font-family: sans-serif,'oxygen';
+            max-width: 580px;
+       
+      }
+      .jobs h1{
+       
+            max-width: 490px;
+       
+      }
+
+  }

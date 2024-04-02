@@ -1,0 +1,24 @@
+.Card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-bottom: 170px;
+}
+
+.Card-Container{
+    padding: 1px;
+    color: white;
+    background-color:#20C6B1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    margin: 10px 10px ;
+  
+}
+.CardLink{
+    text-decoration: none;
+     list-style: none;
+     text-decoration-line: none;
+}

@@ -1,0 +1,23 @@
+:root{
+    --color:rgb(175, 103, 45);
+    --backgroundBody:rgb(196, 122, 62);
+    --text:rgb(8, 8, 8);
+    --font-size:80%;
+    --background: #432814;
+    --font: 'open sans', sans-serif;
+    --sans: "oxygen mono", monospace;
+    --headerText: white;
+
+}
+
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: var(--font) ;
+}
