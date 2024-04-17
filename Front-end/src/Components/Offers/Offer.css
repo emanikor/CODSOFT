@@ -1,46 +1,42 @@
-#about{
-    background-color: rgb(253, 249, 244);
+#offer{
+    background-color:#f4f7f8;
     
     
 }
 
-#about .container{
-    /* border: 1px solid red; */
-     
+.offer-container{
+    /* border: 1px solid rgb(80, 20, 219);  */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0rem 4rem 0rem 2rem;
     gap: 2rem;
     
 }
 
-.about-header2{
+.offer-header2{
     font-weight: bold; 
     font-size: 25px;
     width: 80%;
 }
-.about-p{
+.offer-p{
     width: 90%;
+    font-weight: bold;
     line-height: 30px;
     color: #020202;
+    font-size: 25px;
     margin-bottom: 30px;
 }
-#about .aboutImage img{
-    /* margin: 30px 0 20px; */
+#offer .offerImage img{
+    
     padding: 2px;
-      width: 100%;
-      /* min-height: 10px; */
+      max-width: 90%;
+      min-height: 10px;
       border-radius: 10px;
-     
+      /* border: 1px solid red;  */
      
 }
-.about-btn{
-    padding: 1rem 2rem 1rem;
-    font-size: 18px;
-    background-color: var(--color);
-    color: #efefef;
-   cursor: pointer;
-  border: none;
+.offer-content{
+    /* border: 1px solid rgb(81, 228, 88);  */
 }
 .form{
     display: flex;
@@ -53,6 +49,11 @@
     -webkit-box-shadow: 2px 23px 54px -8px rgba(0,0,0,0.16);
     -moz-box-shadow: 2px 23px 54px -8px rgba(0,0,0,0.16);
    
+
+}
+.offer-section{
+    width: 100%;
+    /* border: 1px solid rgb(104, 78, 78);  */
 
 }
 .form input{  
@@ -93,8 +94,8 @@
 
 
 @media(min-width:850px){
-    #about .container{
-        padding: 5rem 3rem 0rem 0rem ;
+    #offer .offer-container{
+        
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
@@ -110,38 +111,32 @@
         border: none;
         padding: 18px 12px;
      }
-     .about-content{
+     .offer-content{
         /* border:1px solid brown ; */
         width: 100%;
         margin-top: 70px;
         padding: 1rem;
      }
-     .about-image{
+     .offerImage{
         width: 100%;
         /* border:1px solid rgb(243, 7, 7) ; */
      }
-     .hero-section{
+     .offer-section{
         /* border:1px solid brown ; */
         width: 100%;
-        padding: 0 3rem;
+       
         margin: 0;
        
      }
-     .form .inputcat{
-      padding: 18px  2px;
-      
-   }
-   .form .Search-Btn{
-      padding: 18px  2px;
-      width: 100%;
-   }
-   #about .aboutImage img{
-      /* margin: 30px 0 20px; */
-      padding: 2px;
-        width: 110%;
-        ;
-       
-       
-  }
+     #offer .offerImage img{
+    margin-top: 6rem;
+        padding: px;
+          max-width: 90%;
+          min-height: 10px;
+          border-radius: 10px;
+          /* border: 1px solid red;  */
+         
+    }
+   
      
 }

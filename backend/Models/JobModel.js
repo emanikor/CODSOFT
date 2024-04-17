@@ -18,7 +18,7 @@ const jobSchema = new mongoose.Schema({
    },
    jobCategory:{
       type: String,
-       ref:'category',
+       ref:'categories',
    },
       });
       
