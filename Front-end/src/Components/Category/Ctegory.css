@@ -18,11 +18,11 @@
   }
   
   .category-card {
-    background-color: #f4f7f8;
-    border: 1px solid #ddd;
+    background-color: #EBF0F3;
+
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     transition: transform 0.2s ease; /* Add a subtle hover effect */
     justify-content: center;
     align-items: center;
@@ -38,12 +38,12 @@
   
 @media(min-width:850px){
     .category-card {
-        background-color: #f4f7f8;
-        border: 1px solid #ddd;
+        background-color: #EBF0F3;
+        /* border: 1px solid #ddd; */
         width: 200px;
         height: 100px;
         border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       
         transition: transform 0.2s ease; /* Add a subtle hover effect */
         justify-content: center;
         align-items: center;

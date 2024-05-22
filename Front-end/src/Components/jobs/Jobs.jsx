@@ -8,7 +8,11 @@ const Jobs = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/api/jobs')
+        axios.get('http://localhost:4000/api/jobs', 
+        {
+          
+            
+          })
             .then(response => {
                 setJobs(response.data);
                 setLoading(false);

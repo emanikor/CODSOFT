@@ -181,19 +181,42 @@ app.post("/employer", async (req, res) => {
 });
 
 
-
+// post job endpoint
 app.post("/job", async (req, res) => {
-    try {
-      const { title, Description,requirements,responsibilities,jobCategory, location ,
-      } = req.body;
-      const job = new jobModel({ title, Description,requirements, responsibilities,jobCategory, location });
+  try {
+      // Destructure the required properties from req.body
+      const { title, Description, requirements, responsibilities, jobCategory, location } = req.body;
+
+      // Find the category based on the jobCategory sent in the request
+      const category = await CategoryModel.findOne({ name: jobCategory });
+
+      // Check if the category was found
+      if (!category) {
+          return res.status(404).json({ success: false, message: "Category not found" });
+      }
+
+      // Create a new job instance
+      const job = new jobModel({
+          title,
+          Description,
+          requirements,
+          responsibilities,
+          jobCategory: category._id,
+          location
+      });
+
+      // Save the job to the database
       await job.save();
+
+      // Respond with success message
       res.status(201).json({ success: true, message: "Job posted successfully" });
-    } catch (error) {
+  } catch (error) {
+      // Log the error for debugging purposes
       console.error("Error posting job:", error);
+      // Respond with an error message
       res.status(500).json({ success: false, message: "Failed to post job" });
-    }
-  });
+  }
+});
 
 
 //   get request 
@@ -203,6 +226,7 @@ app.get('/api/jobs' , async(req, res)=>{
     return res.status(201).json(jobs) 
 })
 
+// id params
 app.get('/job/:jobId', async (req, res) => {
   try {
     const jobId = req.params.jobId; 
@@ -266,6 +290,38 @@ app.post('/api/category', async (req, res) => {
     res.status(500).json({ message: 'Server Error' });
   }
 });
+
+// get all category
+app.get('/category' , async(req, res)=>{
+  const query = req.query;
+  const category = await CategoryModel.find(query);
+  return res.status(201).json(category) 
+})
+
+
+app.get('/JobCategory/:category', async (req, res) => {
+  try {
+    const category = req.params.category;
+
+    // Find the category document by name
+    const categoryDoc = await CategoryModel.findOne({ name: category });
+
+    if (!categoryDoc) {
+      return res.status(404).json({ error: 'Category not found' });
+    }
+
+
+    // Fetch related items based on the category
+    const relatedItems = await jobModel.find({ jobCategory: categoryDoc._id }).populate('jobCategory', 'name');
+
+    res.status(200).json(relatedItems);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
 
 //application endpoint
 app.post('/applyjob', async (req, res) => {

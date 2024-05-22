@@ -92,14 +92,14 @@ const PostJobForm = () => {
         required
       >
         <option value=''>category</option>
-        <option value='Software developer'>software engeenier</option>
-        <option value='Webdeveloper'>web developer</option>
-        <option value='ProductManager'>product manager</option>
-        <option value='IctOfficer'>ict officer </option>
-        <option value='frontendDeveloper'>frontend developer</option>
-        <option value='BackendDeveloper'>backend developer</option>
-        <option value='WebDesigner'>web designer</option>
-        <option value='Designer'>ui/ux designer</option>
+        <option value='Shipping job'>shipping job</option>
+        <option value='IT & telecoms job'>IT & telecoms</option>
+        <option value='RealEstate jobs'>RealEstate</option>
+        <option value='Hospital Job'>Hospital Job</option>
+        <option value='Constraction Job'>Contsraction</option>
+        <option value='Account Job'>Account Job </option>
+        <option value='Design and Creative'>Design and creative</option>
+        <option value='Fashion Job'>Fashion job </option>
       </select>
       <div className="form-group">
         <label htmlFor="jobLocation">Job Location:</label>

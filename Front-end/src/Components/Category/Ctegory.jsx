@@ -1,64 +1,55 @@
-import React from 'react';
-import './Ctegory.css'; // Import your CSS file (replace with your actual file path)
-
-// Import icons (you can choose from various icon libraries)
-import { FaHospital, FaHardHat, FaCalculator, FaPalette, FaTshirt, FaDesktop } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaHospital, FaHardHat, FaCalculator, FaPalette, FaTshirt, FaDesktop } from 'react-icons/fa'; 
+import axios from 'axios';
+import { Link } from "react-router-dom";
+import './Ctegory.css';
 
 const Category = () => {
-  const category = [
-    {
-      id: 1,
-      title: "Hospital Job",
-      icon: <FaHospital />,
-    },
-    {
-      id: 2,
-      title: "Construction Job",
-      icon: <FaHardHat />,
-    },
-    {
-      id: 3,
-      title: "Accounts Job",
-      icon: <FaCalculator />,
-    },
-    {
-      id: 4,
-      title: "Design and Creative",
-      icon: <FaPalette />,
-    },
-    {
-      id: 5,
-      title: "Fashion Job",
-      icon: <FaTshirt />,
-    },
-    {
-      id: 6,
-      title: "IT & Telecoms Job",
-      icon: <FaDesktop />,
-    },
-    {
-        id: 7,
-        title: "Realestate Job",
-        icon: <FaDesktop />,
-      },
-      {
-        id: 8,
-        title: "shipping Job",
-        icon: <FaDesktop />,
-      },
-  ];
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [category, setCategory] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:4000/Category')
+      .then(response => {
+        setCategory(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.log(error);
+        setError('Error fetching category details');
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className='Category'>
-        <h3>Browse by category</h3>
-        <span>You can locate your category where your dream job is found!</span>
+      <h3>Browse by category</h3>
+      <span>You can locate the category where your dream job is</span>
       <div className='category-container'>
-        {category.map((item) => (
-          <div key={item.id} className='category-card'>
-            <div className='category-icon'>{item.icon}</div>
-            <h3>{item.title}</h3>
-            {/* Additional content or styling can be added here */}
+        {category.map(item => (
+          <Link key={item._id} to={`/category/${item.name}`}>
+          <div key={item._id} className='category-card'>
+            <div className='category-icon'>
+              {item.name === 'Hospital Job' && <FaHospital />}
+              {item.name === 'Construction Job' && <FaHardHat />}
+              {item.name === 'Accounts Job' && <FaCalculator />}
+              {item.name === 'Design and Creative' && <FaPalette />}
+              {item.name === 'Fashion Job' && <FaTshirt />}
+              {item.name === 'IT & Telecoms Job' && <FaDesktop />}
+              {/* Add more conditions for other icons */}
+            </div>
+            <h3>{item.name}</h3>
           </div>
+          </Link>
         ))}
       </div>
     </div>

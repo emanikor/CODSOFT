@@ -11,6 +11,7 @@ import Secret from './Components/Profile/Secret';
 import Category from './Components/PostForm/Category'
 import JobApplication from './Components/JobAplicationForm/jobApplication';
 import Signin from  './Components/Regstration/Signin';
+import Jobcategory from './Components/Category/Jobcategory'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
            <Route path='category' element={<Category/>}/>
            <Route path='/login' element={<Secret/>} />
            <Route path='/application' element={<JobApplication/>} />
+           <Route path="/category/:category" element={<Jobcategory/>} />
         </Routes>
       </div>
     </Router>

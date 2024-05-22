@@ -17,8 +17,8 @@ const jobSchema = new mongoose.Schema({
       type: String,
    },
    jobCategory:{
-      type: String,
-       ref:'categories',
+      type: mongoose.Schema.Types.ObjectId,
+       ref:'Category',
    },
       });
       
